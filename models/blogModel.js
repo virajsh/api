@@ -5,7 +5,7 @@ var blogSchema = new mongoose.Schema({
     alias: String, 
     image: {type: String},
     description: {type: String},
-    githubUrl:String,
+    
     tags: [{name: String, class: String}],
     imageSliders: [{type: String}],
     relatedBlogs : [{name: String, link: String}],
@@ -14,3 +14,7 @@ var blogSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Blog', blogSchema);
+
+
+
+

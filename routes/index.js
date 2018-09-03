@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/userModel');
+var Project = require('../models/projectModel');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
+//sign-in
 router.post('/signin', function(req,res,next){
   
   var email=req.body.email;
@@ -41,6 +42,7 @@ router.post('/signin', function(req,res,next){
   });
 })
 
+//sign-up
 router.post('/signup', function (req, res, next) {
   var newUser = req.body
   var user = new User();
@@ -59,5 +61,7 @@ res.json({code:200,data: newUser});
   });
 }
 );
+
+
 
 module.exports = router;
